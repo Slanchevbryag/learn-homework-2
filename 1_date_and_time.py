@@ -13,7 +13,15 @@ def print_days():
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+    from datetime import date, timedelta
+
+    today = date.today()
+    yesterday = timedelta(days=1)
+    month = timedelta(days=30)
+
+    print(today - yesterday)
+    print(today)
+    print(today - month)
 
 
 def str_2_datetime(date_string):
@@ -21,7 +29,9 @@ def str_2_datetime(date_string):
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+    from datetime import datetime
+
+    return datetime.strptime(date_string, '%d/%m/%y %H:%M:%S.%f')
 
 if __name__ == "__main__":
     print_days()
